@@ -1,0 +1,29 @@
+{
+  "manifest_version": 3,
+  "name": "Atlas 自动签到工具",
+  "version": "0.1.0",
+  "description": "在 Atlas 浏览器里统一管理自动签到任务，当前已接入 Bilibili 大会员经验签到。",
+  "permissions": ["alarms", "storage", "tabs", "scripting"],
+  "host_permissions": ["https://www.bilibili.com/*", "https://account.bilibili.com/*"],
+  "background": {
+    "service_worker": "background/index.js",
+    "type": "module"
+  },
+  "action": {
+    "default_title": "Atlas 自动签到控制台",
+    "default_popup": "popup/popup.html"
+  },
+  "options_page": "options/options.html",
+  "content_scripts": [
+    {
+      "matches": ["https://www.bilibili.com/video/*"],
+      "js": ["content/watch-video.js"],
+      "run_at": "document_idle"
+    },
+    {
+      "matches": ["https://account.bilibili.com/big*"],
+      "js": ["content/claim-vip.js"],
+      "run_at": "document_idle"
+    }
+  ]
+}

@@ -1,0 +1,73 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Atlas 自动签到控制台</title>
+    <link rel="stylesheet" href="./options.css" />
+  </head>
+  <body>
+    <main class="page">
+      <section class="hero hero--glass">
+        <p class="hero__eyebrow">Atlas Extension</p>
+        <div class="hero__heading">
+          <h1>自动签到控制台</h1>
+          <span class="hero__badge">Beta</span>
+        </div>
+        <p class="hero__desc">统一管理多个站点的自动签到任务，当前已接入 Bilibili 大会员经验签到。</p>
+      </section>
+
+      <section class="task-card task-card--glass">
+        <div class="task-card__header">
+          <div class="task-card__copy">
+            <p class="task-card__eyebrow">签到任务</p>
+            <h2>Bilibili 大会员经验签到</h2>
+            <p class="task-card__desc">先观看短视频，再检查领取状态。每天 09:00 自动执行，Atlas 启动后支持补跑。</p>
+          </div>
+          <label class="switch" for="auto-run-toggle" aria-label="自动签到开关">
+            <input id="auto-run-toggle" type="checkbox" />
+            <span class="switch__track">
+              <span class="switch__thumb"></span>
+            </span>
+          </label>
+        </div>
+
+        <section class="task-card__status">
+          <div class="task-card__status-row">
+            <span>今日状态</span>
+            <strong id="status-label">未运行</strong>
+          </div>
+          <div class="task-card__status-row">
+            <span>最近结果</span>
+            <span id="last-message">暂无记录</span>
+          </div>
+          <div class="task-card__status-row">
+            <span>最近时间</span>
+            <span id="last-time">-</span>
+          </div>
+          <div class="task-card__status-row">
+            <span>触发来源</span>
+            <span id="last-trigger">-</span>
+          </div>
+        </section>
+
+        <div class="task-card__meta">
+          <div class="meta-pill">
+            <span>自动签到</span>
+            <strong id="auto-run-label">已开启</strong>
+          </div>
+          <div class="meta-pill">
+            <span>手动执行</span>
+            <strong>始终可用</strong>
+          </div>
+        </div>
+
+        <section class="actions">
+          <button id="run-button" class="button button--primary">立即执行</button>
+          <button id="refresh-button" class="button button--ghost">刷新状态</button>
+        </section>
+      </section>
+    </main>
+    <script type="module" src="./options.js"></script>
+  </body>
+</html>

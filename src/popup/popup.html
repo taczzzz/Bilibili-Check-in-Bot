@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Atlas 自动签到</title>
+    <link rel="stylesheet" href="./popup.css" />
+  </head>
+  <body>
+    <main class="popup">
+      <header class="popup__header">
+        <p class="popup__eyebrow">Atlas</p>
+        <h1>自动签到</h1>
+        <p class="popup__desc">统一管理自动签到任务，当前已接入 Bilibili 大会员经验签到。</p>
+      </header>
+      <section class="card">
+        <div class="card__row">
+          <span>今日状态</span>
+          <strong id="status-label">未运行</strong>
+        </div>
+        <div class="card__row">
+          <span>最近结果</span>
+          <span id="last-message">暂无记录</span>
+        </div>
+        <div class="card__row">
+          <span>最近时间</span>
+          <span id="last-time">-</span>
+        </div>
+        <div class="card__row">
+          <span>触发来源</span>
+          <span id="last-trigger">-</span>
+        </div>
+        <div class="card__row card__row--toggle">
+          <span>自动签到</span>
+          <div class="card__toggle">
+            <strong id="auto-run-label">已开启</strong>
+            <label class="switch" for="auto-run-toggle" aria-label="自动签到开关">
+              <input id="auto-run-toggle" type="checkbox" />
+              <span class="switch__track">
+                <span class="switch__thumb"></span>
+              </span>
+            </label>
+          </div>
+        </div>
+      </section>
+      <section class="task-card">
+        <p class="task-card__title">Bilibili 大会员经验签到</p>
+        <p class="task-card__desc">关闭自动签到后，仍可手动执行当前任务。</p>
+      </section>
+      <div class="popup__actions">
+        <button id="run-button" class="primary-button">立即执行</button>
+        <button id="refresh-button" class="ghost-button">刷新</button>
+      </div>
+    </main>
+    <script type="module" src="./popup.js"></script>
+  </body>
+</html>
